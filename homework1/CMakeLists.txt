@@ -1,0 +1,1 @@
+add_executable(Homework1 1.cpp)
