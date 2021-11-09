@@ -1,3 +1,3 @@
 # Awsome homework
 
-variant #1
+Variant #1
