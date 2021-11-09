@@ -1,1 +1,1 @@
-add_executable(Homework1 1.cpp)
+add_executable(homework1 1.cpp)
