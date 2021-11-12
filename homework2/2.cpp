@@ -50,7 +50,7 @@ int main(int argc, char** argv) {
             h = h + vy * t + 0.5 * g * t * t;
 
             if (h <= 0) {
-                std::cout << target << std::endl;
+                std::cout << interval << std::endl;
                 break;
             }
             if (h > obstacles[target].second) {
