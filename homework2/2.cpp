@@ -40,7 +40,7 @@ int main(int argc, char** argv) {
 
             }
 
-            double t = std::abs(x - obstacles[target].first) / vx;
+            double t = std::abs((x - obstacles[target].first) / vx);
 
             x = obstacles[target].first;
             h = h + vy * t + 0.5 * g * t * t;
@@ -50,7 +50,7 @@ int main(int argc, char** argv) {
                 std::cout << interval << std::endl;
                 return 0;
             }
-            if (h >= obstacles[target].second) {
+            if (h > obstacles[target].second) {
                 (vx > 0) ? interval++ : interval--;
             } else {
                 vx = vx * (-1);
