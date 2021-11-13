@@ -29,16 +29,13 @@ int main(int argc, char** argv) {
                 return 0;
             }
             if (target > size - 1) {
-                if (infile && infile.peek() == EOF) {
-                    std::cout << size << std::endl;
+                if (!infile || (infile && infile.peek() == EOF)) {
+                    std::cout << size - 1 << std::endl;
                     return 0;
                 } else {
                     double x_obs, h_obs;
                     infile >> x_obs >> h_obs;
-                    std::pair < double, double > temp;
-                    temp.first = x_obs;
-                    temp.second = h_obs;
-                    obstacles.push_back(temp);
+                    obstacles.push_back(std::make_pair(x_obs, h_obs));
                     size++;
                 }
             }
