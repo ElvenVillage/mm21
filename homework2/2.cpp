@@ -30,7 +30,7 @@ int main(int argc, char** argv) {
             }
             if (target > size - 1) {
                 if (!infile || (infile && infile.peek() == EOF)) {
-                    std::cout << size - 1 << std::endl;
+                    std::cout << size << std::endl;
                     return 0;
                 } else {
                     double x_obs, h_obs;
@@ -42,10 +42,10 @@ int main(int argc, char** argv) {
 
             double t = std::abs(x - obstacles[target].first) / vx;
 
-            vy = vy + g * t;
-            x = x + vx * t;
+            x = obstacles[target].first;
             h = h + vy * t + 0.5 * g * t * t;
-
+            vy = vy + g * t;
+            
             if (h <= 0) {
                 std::cout << interval << std::endl;
                 return 0;
